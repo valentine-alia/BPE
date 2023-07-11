@@ -87,7 +87,7 @@ options = {
 }
 
 seeds = np.arange(10)
-acquisition_functions = [AcqFcnLog(), AcqFcnNoisy(), AcqFcnVIQR(), AcqFcnIMIQR(), AcqFcnVanilla()]
+acquisition_functions = [AcqFcnLog(), AcqFcnNoisy(), AcqFcnVIQR(), AcqFcnVanilla(), AcqFcnIMIQR()]
 for i, acq in enumerate(acquisition_functions):
     options["search_acq_fcn"] = [acq]
     k1 = 1.
@@ -110,7 +110,7 @@ for i, acq in enumerate(acquisition_functions):
             vbmc = VBMC(log_likelihood, x0, LB, UB, PLB, PUB, prior = prior, options = options)
             np.random.seed(seed)
             vp, results = vbmc.optimize();
-            vbmc.vp.save("vp" + str(i) + "_" +  str(j) + "_" + str(seed) + ".pkl", overwrite=True)
+            vp.save("vp" + str(i) + "_" +  str(j) + "_" + str(seed) + ".hdf5", overwrite=True)
         k1 += 1.
         k2 += 1.
         k3 += 1.
