@@ -55,7 +55,9 @@ def KL(vp1,vp2): # KL[vp1 || vp2]
 
 
 def samples_above_threshold(vp, true_value, n_samples, lower_thresh_const):
+
     hit  = False # to check if there are more than one true value
+    true_value = np.asarray(true_value, float)
     try:
         true_value[0][0] 
     except:
