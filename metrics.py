@@ -17,7 +17,7 @@ def euclidean_metric(vp,truth_array,D,LB,UB,PLB,PUB, n_samples = int(1e6),origin
     """
     Finds distance between truth and mean of samples from vp in unconstrained space
     """
-    #edit try for grace REPO thing
+    #edit now but again alia 
     scaler = ParameterTransformer(D,LB,UB,PLB,PUB)
     scaled_truth = scaler.__call__(truth_array)
     Xs, _ = vp.sample(n_samples, orig_flag = False)
