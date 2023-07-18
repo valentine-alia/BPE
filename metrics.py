@@ -27,6 +27,7 @@ def euclidean_metric(vp,truth_array,D,LB,UB,PLB,PUB, n_samples = int(1e6),origin
     
 
 def truth_first_KL(true_posterior,vp2, N = int(1e4)):  # KL[true posterior || vp2]
+    # true_posterior is scipy stats distribution
     truth_samples = true_posterior.rvs(size = N)
     truth_densities = true_posterior.pdf(truth_samples)
     vp2_samples = vp2.pdf(truth_samples)
