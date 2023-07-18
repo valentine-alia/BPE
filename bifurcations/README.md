@@ -1,0 +1,1 @@
+notebook where we were looking at if bifurcations were obvious in log likelihoods, this is VERY much just a tiny unpolished thought
